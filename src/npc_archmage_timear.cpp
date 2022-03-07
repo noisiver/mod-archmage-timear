@@ -118,7 +118,11 @@ class npc_archmage_timear : public CreatureScript
                             if (Creature* image = ObjectAccessor::GetCreature(*me, _summonGUID))
                                 image->DespawnOrUnsummon();
 
-                            me->SummonCreature(newEntry, 5770.970f, 529.512f, 653.622f, 3.985f);
+                            float z = 653.622f;
+                            if (newEntry == NPC_SARTHARION_IMAGE)
+                                z += 3.0f;
+
+                            me->SummonCreature(newEntry, 5770.970f, 529.512f, z, 3.985f);
                         }
                     }
                 }

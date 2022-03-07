@@ -70,3 +70,7 @@ INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13254, 9
 INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13255, 90000, 'Proof of Demise: Herald Volazj');
 INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13256, 90000, 'Proof of Demise: Cyanigosa');
 INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (14199, 90000, 'Proof of Demise: The Black Knight');
+
+DELETE FROM `creature_template_addon` WHERE `entry`=31618;
+INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `visibilityDistanceType`, `auras`) VALUES
+(31618, 0, 0, 50331648, 0, 0, 0, '');
