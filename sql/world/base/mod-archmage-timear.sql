@@ -72,5 +72,7 @@ INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13256, 9
 INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (14199, 90000, 'Proof of Demise: The Black Knight');
 
 DELETE FROM `creature_template_addon` WHERE `entry`=31618;
-INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `visibilityDistanceType`, `auras`) VALUES
-(31618, 0, 0, 50331648, 0, 0, 0, '');
+INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `visibilityDistanceType`, `auras`) VALUES (31618, 0, 0, 50331648, 0, 0, 0, '');
+
+DELETE FROM `creature_template_addon` WHERE `entry`=31629;
+INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `visibilityDistanceType`, `auras`) VALUES (31629, 0, 0, 50331648, 0, 0, 0, '');

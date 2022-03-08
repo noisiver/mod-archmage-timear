@@ -119,7 +119,7 @@ class npc_archmage_timear : public CreatureScript
                                 image->DespawnOrUnsummon();
 
                             float z = 653.622f;
-                            if (newEntry == NPC_SARTHARION_IMAGE)
+                            if (newEntry == NPC_KERISTRASZA_IMAGE || newEntry == NPC_CYANIGOSA_IMAGE)
                                 z += 3.0f;
 
                             me->SummonCreature(newEntry, 5770.970f, 529.512f, z, 3.985f);
