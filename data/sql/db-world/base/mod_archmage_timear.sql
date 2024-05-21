@@ -1,6 +1,7 @@
 UPDATE `creature_template` SET `ScriptName`='npc_archmage_timear' WHERE `entry`=31439;
 
 DELETE FROM `creature_questender` WHERE `id`=31439 AND `quest` IN (13245, 13246, 13247, 13248, 13249, 13250, 13251, 13252, 13253, 13254, 13255, 13256, 14199);
+INSERT INTO `creature_questender` (`id`, `quest`) VALUES
 (31439, 13245), -- Proof of Demise: Ingvar the Plunderer
 (31439, 13246), -- Proof of Demise: Keristrasza
 (31439, 13247), -- Proof of Demise: Ley-Guardian Eregos
