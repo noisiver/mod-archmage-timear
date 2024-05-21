@@ -1,36 +1,50 @@
 UPDATE `creature_template` SET `ScriptName`='npc_archmage_timear' WHERE `entry`=31439;
 
 DELETE FROM `creature_questender` WHERE `id`=31439 AND `quest` IN (13245, 13246, 13247, 13248, 13249, 13250, 13251, 13252, 13253, 13254, 13255, 13256, 14199);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13245);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13246);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13247);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13248);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13249);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13250);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13251);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13252);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13253);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13254);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13255);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 13256);
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES (31439, 14199);
+(31439, 13245), -- Proof of Demise: Ingvar the Plunderer
+(31439, 13246), -- Proof of Demise: Keristrasza
+(31439, 13247), -- Proof of Demise: Ley-Guardian Eregos
+(31439, 13248), -- Proof of Demise: King Ymiron
+(31439, 13249), -- Proof of Demise: The Prophet Tharon'ja
+(31439, 13250), -- Proof of Demise: Gal'darah
+(31439, 13251), -- Proof of Demise: Mal'Ganis
+(31439, 13252), -- Proof of Demise: Sjonnir The Ironshaper
+(31439, 13253), -- Proof of Demise: Loken
+(31439, 13254), -- Proof of Demise: Anub'arak
+(31439, 13255), -- Proof of Demise: Herald Volazj
+(31439, 13256), -- Proof of Demise: Cyanigosa
+(31439, 14199); -- Proof of Demise: The Black Knight
 
 DELETE FROM `creature_queststarter` WHERE `id`=31439 AND `quest` IN (13245, 13246, 13247, 13248, 13249, 13250, 13251, 13252, 13253, 13254, 13255, 13256, 14199);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13245);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13246);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13247);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13248);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13249);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13250);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13251);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13252);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13253);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13254);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13255);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 13256);
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (31439, 14199);
+INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES
+(31439, 13245), -- Proof of Demise: Ingvar the Plunderer
+(31439, 13246), -- Proof of Demise: Keristrasza
+(31439, 13247), -- Proof of Demise: Ley-Guardian Eregos
+(31439, 13248), -- Proof of Demise: King Ymiron
+(31439, 13249), -- Proof of Demise: The Prophet Tharon'ja
+(31439, 13250), -- Proof of Demise: Gal'darah
+(31439, 13251), -- Proof of Demise: Mal'Ganis
+(31439, 13252), -- Proof of Demise: Sjonnir The Ironshaper
+(31439, 13253), -- Proof of Demise: Loken
+(31439, 13254), -- Proof of Demise: Anub'arak
+(31439, 13255), -- Proof of Demise: Herald Volazj
+(31439, 13256), -- Proof of Demise: Cyanigosa
+(31439, 14199); -- Proof of Demise: The Black Knight
 
-UPDATE `quest_template` SET `Flags`=4232 WHERE `ID` IN (13245, 13246, 13247, 13248, 13249, 13250, 13251, 13252, 13253, 13254, 13255, 13256, 14199);
+UPDATE `quest_template` SET `Flags`=`Flags`&~16384 WHERE `ID` IN (
+    13245, -- Proof of Demise: Ingvar the Plunderer
+    13246, -- Proof of Demise: Keristrasza
+    13247, -- Proof of Demise: Ley-Guardian Eregos
+    13248, -- Proof of Demise: King Ymiron
+    13249, -- Proof of Demise: The Prophet Tharon'ja
+    13250, -- Proof of Demise: Gal'darah
+    13251, -- Proof of Demise: Mal'Ganis
+    13252, -- Proof of Demise: Sjonnir The Ironshaper
+    13253, -- Proof of Demise: Loken
+    13254, -- Proof of Demise: Anub'arak
+    13255, -- Proof of Demise: Herald Volazj
+    13256 -- Proof of Demise: Cyanigosa
+);
 
 UPDATE `quest_template` SET `LogDescription`='Archmage Timear in Dalaran wants you to return with the Axe of the Plunderer.$B$BThis quest may only be completed on Heroic difficulty.', `QuestCompletionLog`='Return to Archmage Timear at Forlorn Woods in Dalaran.' WHERE `ID`=13245;
 UPDATE `quest_template` SET `LogDescription`='Archmage Timear in Dalaran wants you to return with Keristrasza\'s Broken Heart.$B$BThis quest may only be completed on Heroic difficulty.', `QuestCompletionLog`='Return to Archmage Timear at Forlorn Woods in Dalaran.' WHERE `ID`=13246;
@@ -54,25 +68,21 @@ UPDATE `quest_request_items` SET `CompletionText`='Did the Black Knight appear u
 UPDATE `quest_template_addon` SET `ExclusiveGroup`=13245 WHERE `ID`=14199;
 
 DELETE FROM `pool_template` WHERE `entry`=90000;
-INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (90000, 1, 'Heroic Dungeon Dailies');
+INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
+(90000, 1, 'Heroic Dungeon Dailies');
 
 DELETE FROM `pool_quest` WHERE `pool_entry`=90000;
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13245, 90000, 'Proof of Demise: Ingvar the Plunderer');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13246, 90000, 'Proof of Demise: Keristrasza');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13247, 90000, 'Proof of Demise: Ley-Guardian Eregos');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13248, 90000, 'Proof of Demise: King Ymiron');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13249, 90000, 'Proof of Demise: The Prophet Tharon\'ja');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13250, 90000, 'Proof of Demise: Gal\'darah');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13251, 90000, 'Proof of Demise: Mal\'Ganis');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13252, 90000, 'Proof of Demise: Sjonnir The Ironshaper');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13253, 90000, 'Proof of Demise: Loken');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13254, 90000, 'Proof of Demise: Anub\'arak');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13255, 90000, 'Proof of Demise: Herald Volazj');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (13256, 90000, 'Proof of Demise: Cyanigosa');
-INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES (14199, 90000, 'Proof of Demise: The Black Knight');
-
-DELETE FROM `creature_template_addon` WHERE `entry`=31618;
-INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `visibilityDistanceType`, `auras`) VALUES (31618, 0, 0, 50331648, 0, 0, 0, '');
-
-DELETE FROM `creature_template_addon` WHERE `entry`=31629;
-INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `visibilityDistanceType`, `auras`) VALUES (31629, 0, 0, 50331648, 0, 0, 0, '');
+INSERT INTO `pool_quest` (`entry`, `pool_entry`, `description`) VALUES
+(13245, 90000, 'Proof of Demise: Ingvar the Plunderer'),
+(13246, 90000, 'Proof of Demise: Keristrasza'),
+(13247, 90000, 'Proof of Demise: Ley-Guardian Eregos'),
+(13248, 90000, 'Proof of Demise: King Ymiron'),
+(13249, 90000, 'Proof of Demise: The Prophet Tharon\'ja'),
+(13250, 90000, 'Proof of Demise: Gal\'darah'),
+(13251, 90000, 'Proof of Demise: Mal\'Ganis'),
+(13252, 90000, 'Proof of Demise: Sjonnir The Ironshaper'),
+(13253, 90000, 'Proof of Demise: Loken'),
+(13254, 90000, 'Proof of Demise: Anub\'arak'),
+(13255, 90000, 'Proof of Demise: Herald Volazj'),
+(13256, 90000, 'Proof of Demise: Cyanigosa'),
+(14199, 90000, 'Proof of Demise: The Black Knight');
