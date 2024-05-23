@@ -44,7 +44,8 @@ UPDATE `quest_template` SET `Flags`=`Flags`&~16384 WHERE `ID` IN (
     13253, -- Proof of Demise: Loken
     13254, -- Proof of Demise: Anub'arak
     13255, -- Proof of Demise: Herald Volazj
-    13256 -- Proof of Demise: Cyanigosa
+    13256, -- Proof of Demise: Cyanigosa
+    14199 -- Proof of Demise: The Black Knight
 );
 
 UPDATE `quest_template` SET `LogDescription`='Archmage Timear in Dalaran wants you to return with the Axe of the Plunderer.$B$BThis quest may only be completed on Heroic difficulty.', `QuestCompletionLog`='Return to Archmage Timear at Forlorn Woods in Dalaran.' WHERE `ID`=13245;
